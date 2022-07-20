@@ -21,3 +21,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/user', function (Request $request) {
     return $request->url();
 });
+
+Route::get('/users/{id}', function (Request $request) {
+    return App::call('App\Http\Controllers\UserController@index');
+});
+
+
+Route::get('/getallchallan', function (Request $request) {
+    return $request->url();
+});
+
+Route::get('/getsinglechallan/{id}', function (Request $request) {
+    return $request->url();
+});
+
+
+Route::get('/updatechallan/{id}', function (Request $request) {
+    return $request->url();
+});
