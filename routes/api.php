@@ -14,28 +14,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+// Route::get('/user', function (Request $request) {
+//     return $request->url();
 // });
 
-Route::get('/user', function (Request $request) {
-    return $request->url();
+// Route::get('/users/{id}', function (Request $request) {
+//     return App::call('App\Http\Controllers\UserController@index');
+// });
+
+
+// Route::get('/getallchallan', function (Request $request) {
+//     return $request->url();
+// });
+
+// Route::get('/getsinglechallan/{id}', function (Request $request) {
+//     return $request->url();
+// });
+
+
+// Route::get('/updatechallan/{id}', function (Request $request) {
+//     return $request->url();
+// });
+
+
+
+Route::post('/search', function (Request $request) {
+    // if (Auth::check()) {
+    return App::call('App\Http\Controllers\ApiController@search');
+    // }
 });
 
-Route::get('/users/{id}', function (Request $request) {
-    return App::call('App\Http\Controllers\UserController@index');
-});
-
-
-Route::get('/getallchallan', function (Request $request) {
-    return $request->url();
-});
-
-Route::get('/getsinglechallan/{id}', function (Request $request) {
-    return $request->url();
-});
-
-
-Route::get('/updatechallan/{id}', function (Request $request) {
-    return $request->url();
+Route::post('/submitfee', function (Request $request) {
+    // if (Auth::check()) {
+    return App::call('App\Http\Controllers\ApiController@submitfee');
+    // }
 });
